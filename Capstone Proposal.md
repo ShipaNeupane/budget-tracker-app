@@ -36,10 +36,16 @@ List technologies that will be used in your app, including any libraries to save
     - Frontend: Flutter or React Native (for mobile), or React.js (for web).
     - Backend: Node.js with Express, or Firebase for cloud services.
     - Database: SQLite (for local storage), or Firebase for real-time database.
-    - API: 
+    - API: for budget advice 
 
 ### APIs
 List any external sources of data that will be used in your app.
+
+Alpha Vantage
+    - This API provides real-time and historical market data for stocks, forex, and cryptocurrency. It’s useful for giving investment tips based on current market trends.
+    - Once a user meets their savings goal, you can suggest stock or market investments to help them invest a portion of their income.
+    - Free tier available.
+    - Alpha Vantage Documentation available 
 
 ### Sitemap
 List the pages of your app with brief descriptions. You can show this visually, or write it out.
