@@ -61,6 +61,12 @@ App Pages:
 ### Mockups
 Provide visuals of your app's screens. You can use pictures of hand-drawn sketches, or wireframing tools like Figma.
 
+![Register Page](./assests/register.png)
+![Login Page](./assests/login.png)
+![Forget Password Page](./assests/forgetPassword.png)
+![other Pages](./assests/otherPages.jpg)
+![ERD](./assests/ERD.jpg)
+
 ### Data
 Describe your data and the relationships between the data points. You can show this visually using diagrams, or write it out. 
 
