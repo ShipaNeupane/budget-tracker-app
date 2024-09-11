@@ -100,12 +100,12 @@ List endpoints that your server will implement, including HTTP methods, paramete
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation working back from the capstone due date. 
 
 Sprint Breakdown:
-    - 11 - 12: Set up repository, create basic frontend UI (Login, Register, Home Page).
-    - 13 - 14: Implement backend for user authentication (register/login) and connect it to the database.
-    - 15 - 16: Implement transaction input form, connect it to the backend, and display data on the home page.
-    - 17 - 18: Add categorization and visualization features (charts).
-    - 19 - 20: Implement goal-setting functionality and connect it to the user’s transaction data.
-    - 21 - 22: Polish UI, fix any bugs, and complete final testing.
+1. 11 - 12: Set up repository, create basic frontend UI (Login, Register, Home Page).
+2. 13 - 14: Implement backend for user authentication (register/login) and connect it to the database.
+3. 15 - 16: Implement transaction input form, connect it to the backend, and display data on the home page.
+4. 17 - 18: Add categorization and visualization features (charts).
+5. 19 - 20: Implement goal-setting functionality and connect it to the user’s transaction data.
+6. 21 - 22: Polish UI, fix any bugs, and complete final testing.
 
 
 ---
