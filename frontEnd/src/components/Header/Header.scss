@@ -1,0 +1,60 @@
+@use "../../styles/global.scss" as *;
+
+.header{
+    align-items: center;
+    margin: 1rem;
+
+    @include desktop{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    h1 {
+        font-size: $font-size-large;
+        font-weight: $font-medium;
+
+        @include desktop{
+            padding-left: 1.5rem;
+        }
+    }
+
+    .date-options {
+        display: flex;
+        flex-direction: row;
+        width: 30rem;
+        height: auto;
+        justify-content: center;
+
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            width: auto;
+        }
+
+        @include desktop{
+            width: auto;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: $light-background;
+            color: $dark-text;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: $font-medium;
+
+            &.selected {
+                background-color: $primary-color;
+                color: white;
+            }
+
+            &:hover {
+                background-color: lighten($primary-color, 20%);
+            }
+        }
+    }
+}

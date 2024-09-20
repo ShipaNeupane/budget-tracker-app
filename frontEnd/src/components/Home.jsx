@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getTransactions } from '../api.js';
 import NavigationBar from './NavBar/NavBar.jsx';
+import Header from './Header/Header.jsx';
 
 const Home = () => {
     const [transactions, setTransactions] = useState([]);
@@ -14,6 +15,7 @@ const Home = () => {
     return (
         <div>
             <NavigationBar />
+            <Header />
         <h2>Transactions</h2>
         <ul>
             {transactions.map((transaction) => (
