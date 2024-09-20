@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import './NavBar.scss';
 import logo from "../../assets/logo.png"
 import profile from "../../assets/profilePic.jpg"
+import bell from '../../assets/icons/bell.png'
+import setting from '../../assets/icons/setting.png'
 
 const NavigationBar = () => {
     return (
@@ -16,8 +18,8 @@ const NavigationBar = () => {
         </ul>
         
         <div className="icons">
-            <i className="icon-settings"></i>
-            <i className="icon-notifications"></i>
+            <img src={setting} alt="Settings" className="icon-settings" />
+            <img src={bell} alt="Notificaton" className="icon-notifications" />
             <img src={profile} alt="Profile" className="profile-pic" />
         </div>
         

@@ -15,10 +15,9 @@
     .nav-links {
         display: flex;
         list-style: none;
-        gap: 3rem;
+        gap: 1rem;
 
     li {
-        font-style: none;
         margin: 0 15px;
         font-size: $font-size-medium;
         color: $dark-text;
