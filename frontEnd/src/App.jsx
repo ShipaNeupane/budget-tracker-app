@@ -6,8 +6,8 @@ import TransactionPage from './pages/Transaction';
 const App = () => {
 
   const [transactions, setTransactions] = useState([
-    { amount: '+ $5000.00', category: 'Income', date: '2024/04/01', type: 'Inflow' },
-    { amount: '- $19.99', category: 'Subscription', date: '2024/03/29', type: 'Outflow' },
+    { amount: '5000', category: 'Income', date: '2024/04/01', type: 'Inflow' },
+    { amount: '19.99', category: 'Subscription', date: '2024/03/29', type: 'Outflow' },
     // Additional initial transactions...
   ]);
 
