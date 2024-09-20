@@ -28,8 +28,20 @@
             font-size: $font-size-regular;
         }
 
-        td:last-child {
-            color: $negative-color;  // Or dynamically set depending on inflow/outflow
+        .inflow {
+            color: $positive-color; // Set a positive color for inflows
+        }
+
+        .outflow {
+            color: $negative-color; // Set a negative color for outflows
+        }
+        
+        .inflow:last-child {
+            color: $positive-color; // Green for inflows
+        }
+
+        .outflow:last-child {
+            color: $negative-color; // Red for outflows
         }
     }
 }

@@ -8,58 +8,63 @@ const AddTransaction = ({ addTransaction }) => {
     const [category, setCategory] = useState('');
     const [date, setDate] = useState('');
     const [type, setType] = useState('');
-
-    const navigate = useNavigate(); // For redirecting after submission
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        const transactionData = {
+    e.preventDefault();
+
+    const transactionData = {
         amount: type === 'inflow' ? `+ $${amount}` : `- $${amount}`,
         category,
         date,
-        type
-        };
+        type: type.charAt(0).toUpperCase() + type.slice(1),
+    };
 
-        // Use the API to send data to the backend
-        addTransactionAPI(transactionData)
-        .then((response) => {
-            // Assuming the API call was successful, also update local state
-            addTransaction(transactionData); // Update the local state in App.js
+    // Use the API to send data to the backend
+    addTransactionAPI(transactionData)
+        .then(() => {
+        // Add the new transaction to local state in App.js
+        addTransaction(transactionData);
 
-            // Redirect to the TransactionList page
-            navigate('/');
+        // Redirect back to Home page
+        navigate('/');
         })
         .catch((error) => {
-            console.error('Error adding transaction:', error);
+        console.error('Error adding transaction:', error);
         });
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
         <input
-            type="number"
-            placeholder="Amount"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+        type="number"
+        placeholder="Amount"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
         />
+
         <input
-            type="text"
-            placeholder="Category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
+        type="text"
+        placeholder="Category"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
         />
+
         <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+        type="date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
         />
+
         <select value={type} onChange={(e) => setType(e.target.value)}>
-            <option value="">Select Type</option>
-            <option value="Inflow">Inflow</option>
-            <option value="Outflow">Outflow</option>
+        <option value="">Select Type</option>
+        <option value="inflow">Inflow</option>
+        <option value="outflow">Outflow</option>
         </select>
+
         <button type="submit">Add Transaction</button>
-        </form>
+        
+    </form>
     );
 };
 
