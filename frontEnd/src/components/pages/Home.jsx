@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { getTransactions } from '../api.js';
-import NavigationBar from './NavBar/NavBar.jsx';
-import Header from './Header/Header.jsx';
-import Balance from './Balance/Balance.jsx';
+import { getTransactions } from '../../api.js';
+import NavigationBar from '../NavBar/NavBar.jsx';
+import Header from '../Header/Header.jsx';
+import Balance from '../Balance/Balance.jsx';
+import ActionSection from '../ActionSection/ActionSection.jsx';
 
 const Home = () => {
     const [transactions, setTransactions] = useState([]);
@@ -18,6 +19,8 @@ const Home = () => {
             <NavigationBar />
             <Header />
             <Balance />
+            <ActionSection />
+
         <h2>Transactions</h2>
         <ul>
             {transactions.map((transaction) => (

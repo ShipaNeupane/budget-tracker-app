@@ -1,0 +1,31 @@
+@use "../../styles/global.scss" as *;
+
+.actions{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    gap: 3rem;
+
+    .action-button {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        font-weight: $font-medium;
+        cursor: pointer;
+
+        &.add-income {
+        background-color: $positive-color;
+        color: white;
+        }
+
+        &.add-expense {
+        background-color: $negative-color;
+        color: white;
+        }
+
+        &:hover {
+        opacity: 0.8;
+        font-weight: bold;
+        }
+    }
+    }
