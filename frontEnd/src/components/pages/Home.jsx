@@ -4,6 +4,7 @@ import NavigationBar from '../NavBar/NavBar.jsx';
 import Header from '../Header/Header.jsx';
 import Balance from '../Balance/Balance.jsx';
 import ActionSection from '../ActionSection/ActionSection.jsx';
+import TransactionList from '../TransactionList/TransactionList.jsx';
 
 const Home = () => {
     const [transactions, setTransactions] = useState([]);
@@ -22,6 +23,7 @@ const Home = () => {
             <ActionSection />
 
         <h2>Transactions</h2>
+        <TransactionList />
         <ul>
             {transactions.map((transaction) => (
             <li key={transaction.id}>

@@ -1,0 +1,35 @@
+@use "../../styles/global.scss" as *;
+
+.transactions {
+    margin: 1rem;
+
+    h3 {
+    font-size: $font-size-medium;
+    margin-bottom: 15px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        align-items: center;
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid $light-background;
+        }
+
+        th {
+            font-size: $font-size-small;
+            color: $gray-text;
+        }
+
+        td {
+            font-size: $font-size-regular;
+        }
+
+        td:last-child {
+            color: $negative-color;  // Or dynamically set depending on inflow/outflow
+        }
+    }
+}
