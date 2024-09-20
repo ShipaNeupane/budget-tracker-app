@@ -7,17 +7,18 @@
 
 // Mixin for tablet (min-width: 768px)
 @mixin tablet {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet-breakpoint) {
         @content;
     }
 }
 
 // Mixin for desktop (min-width: 1280px)
 @mixin desktop {
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: $desktop-breakpoint) {
         @content;
     }
 }
+
 
 @mixin flex-center {
     display: flex;

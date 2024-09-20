@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getTransactions } from '../api.js';
+import NavigationBar from './NavBar/NavBar.jsx';
 
 const Home = () => {
     const [transactions, setTransactions] = useState([]);
@@ -12,6 +13,7 @@ const Home = () => {
 
     return (
         <div>
+            <NavigationBar />
         <h2>Transactions</h2>
         <ul>
             {transactions.map((transaction) => (

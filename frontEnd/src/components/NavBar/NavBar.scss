@@ -1,0 +1,51 @@
+@use "../../styles/global.scss" as *;
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    background-color: $light-background;
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+
+    li {
+        margin: 0 15px;
+        font-size: $font-size-medium;
+        color: $dark-text;
+
+        &:hover {
+        color: $primary-color;
+        }
+    }
+    }
+
+    .icons {
+    display: flex;
+    align-items: center;
+
+    .icon-settings, .icon-notifications {
+        font-size: 20px;
+        color: $gray-text;
+        margin-right: 20px;
+        cursor: pointer;
+
+        &:hover {
+        color: $primary-color;
+        }
+    }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    }
+}

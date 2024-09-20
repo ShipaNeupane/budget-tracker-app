@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import "./partials/mixins";
+@import "./partials/variables";
 
 * {
     margin: 0;
@@ -7,7 +7,7 @@
     box-sizing: border-box;
     }
 
-    html, body {
+    body {
     font-family: $font-family;
     color: $dark-text;
     background-color: $light-background;
@@ -29,7 +29,7 @@
     transition: background-color 0.2s ease;
 
     &:hover {
-        background-color: darken($primary-color, 10%);
+        background-color: $primary-color;
     }
 
     &.primary {
