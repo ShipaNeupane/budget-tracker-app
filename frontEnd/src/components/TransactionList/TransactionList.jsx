@@ -9,20 +9,18 @@ const TransactionList  = ({ transactions, onEditTransaction, onDeleteTransaction
     const [selectedTransaction, setSelectedTransaction] = useState(null);
 
     const formatAmount = (amount, type) => {
-        const formattedAmount = parseFloat(amount).toFixed(2); // Ensures 2 decimal places
+        const formattedAmount = parseFloat(amount).toFixed(2);
         return type === 'Inflow' ? `+ $${formattedAmount}` : `- $${formattedAmount}`;
     };
 
-    // Handle delete click to open the modal
     const handleDeleteClick = (transaction) => {
         setSelectedTransaction(transaction);
-        setModalOpen(true); // Open the modal when delete is clicked
+        setModalOpen(true);
     };
 
-    // Handle confirm delete
     const handleConfirmDelete = () => {
-        onDeleteTransaction(selectedTransaction.id); // Call parent delete function with transaction id
-        setModalOpen(false); // Close modal after deletion
+        onDeleteTransaction(selectedTransaction.id);
+        setModalOpen(false);
     };
 
     return (
@@ -35,7 +33,7 @@ const TransactionList  = ({ transactions, onEditTransaction, onDeleteTransaction
                         <th>Category</th>
                         <th>Date</th>
                         <th>Type</th>
-                        <th>Actions</th> {/* New column for edit/delete icons */}
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,7 +64,6 @@ const TransactionList  = ({ transactions, onEditTransaction, onDeleteTransaction
                 </tbody>
             </table>
 
-            {/* Modal for delete confirmation */}
             {isModalOpen && (
                 <Modal 
                     title="Are you sure you want to delete this transaction?" 

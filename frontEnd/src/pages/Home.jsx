@@ -3,10 +3,12 @@ import NavBar from '../components/NavBar/NavBar.jsx';
 import Header from '../components/Header/Header.jsx';
 import Balance from '../components/Balance/Balance.jsx';
 import ActionSection from '../components/ActionSection/ActionSection.jsx';
+import DonutChart from '../components/DonutChart/DonutChart'; // Import the new DonutChart component
 import TransactionList from '../components/TransactionList/TransactionList.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 import { getTransactions, deleteTransaction  } from '../api.js';
 import { useNavigate } from 'react-router-dom';
+import './Home.scss'
 
 const Home = () => {
     const [transactions, setTransactions] = useState([]);
@@ -116,11 +118,16 @@ const Home = () => {
         <Header period={period} setPeriod={setPeriod} />
         <Balance transactions={filteredTransactions} />
         <ActionSection />
-        <TransactionList 
-            transactions={filteredTransactions} 
-            onEditTransaction={handleEditTransaction} 
-            onDeleteTransaction={handleDeleteTransaction}
-        />
+
+        <div className='home'>
+            <DonutChart className='chart-container' transactions={filteredTransactions} />
+            <TransactionList className='transactions'
+                transactions={filteredTransactions} 
+                onEditTransaction={handleEditTransaction} 
+                onDeleteTransaction={handleDeleteTransaction}
+            />
+        </div>
+
         <Footer />
     </div>
     );
