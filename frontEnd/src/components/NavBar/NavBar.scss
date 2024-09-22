@@ -28,26 +28,11 @@
         }
     }
     }
-
-    .icons {
-    display: flex;
-    align-items: center;
-
-    .icon-settings, .icon-notifications {
-        font-size: 20px;
-        color: $gray-text;
-        margin-right: 20px;
-        cursor: pointer;
-
-        &:hover {
-        color: $primary-color;
-        }
+    
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
     }
-
-        .profile-pic {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-    }
+    
 }

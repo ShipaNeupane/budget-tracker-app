@@ -18,8 +18,6 @@ const NavigationBar = () => {
         </ul>
         
         <div className="icons">
-            <img src={setting} alt="Settings" className="icon-settings" />
-            <img src={bell} alt="Notificaton" className="icon-notifications" />
             <img src={profile} alt="Profile" className="profile-pic" />
         </div>
         
