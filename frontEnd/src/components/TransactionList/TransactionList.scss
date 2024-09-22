@@ -31,19 +31,19 @@
         }
 
         .inflow {
-            color: $positive-color; // Set a positive color for inflows
+            color: $positive-color; 
         }
 
         .outflow {
-            color: $negative-color; // Set a negative color for outflows
+            color: $negative-color; 
         }
         
         .inflow:last-child {
-            color: $positive-color; // Green for inflows
+            color: $positive-color; 
         }
 
         .outflow:last-child {
-            color: $negative-color; // Red for outflows
+            color: $negative-color; 
         }
     }
 }

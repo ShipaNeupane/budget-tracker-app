@@ -3,29 +3,31 @@
 .actions{
     display: flex;
     justify-content: center;
-    margin: 2rem;
+    margin: 2.5rem 0;
     gap: 3rem;
 
     .action-button {
-        padding: 15px 30px;
+        padding: 1rem 1.5rem;
         border: none;
-        border-radius: 8px;
-        font-weight: $font-medium;
+        border-radius: 0.5rem;
+        font-family: 'Consolas';
         cursor: pointer;
 
         &.add-income {
-        background-color: $positive-color;
-        color: white;
+            font-size: medium;
+            background-color: $positive-color;
+            color: white;
         }
 
         &.add-expense {
-        background-color: $negative-color;
-        color: white;
+            font-size: medium;
+            background-color: $negative-color;
+            color: white;
         }
 
         &:hover {
-        opacity: 0.8;
-        font-weight: bold;
+            opacity: 0.8;
+            font-weight: bold;
         }
     }
     }

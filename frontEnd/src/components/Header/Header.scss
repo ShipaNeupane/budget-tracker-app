@@ -2,7 +2,7 @@
 
 .header{
     align-items: center;
-    margin: 1rem;
+    margin: 1rem 0.7rem;
 
     @include desktop{
         display: flex;
@@ -38,14 +38,16 @@
         }
 
         button {
-            margin-right: 10px;
-            padding: 10px 20px;
+            font-family: 'Consolas';
+            font-weight: $font-medium;
+            font-size: $font-size-small;
+            margin-right: 0.7rem;
+            padding: 0.5rem 0.8rem;
             border: none;
             background-color: $light-background;
-            color: $dark-text;
-            border-radius: 8px;
+            color: $gray-text;
+            border-radius: 0.5rem;
             cursor: pointer;
-            font-weight: $font-medium;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
             &.selected {
@@ -55,6 +57,7 @@
 
             &:hover {
                 background-color: lighten($primary-color, 20%);
+                color: $dark-text;
             }
         }
     }

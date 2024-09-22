@@ -1,7 +1,7 @@
 @use "../../styles/global.scss" as *;
 
 .balance {
-    margin: 0.5rem 0.5rem 1.25rem 0.5rem;
+    margin: 2rem 1.25rem;
 
     @include tablet{
         display: flex;

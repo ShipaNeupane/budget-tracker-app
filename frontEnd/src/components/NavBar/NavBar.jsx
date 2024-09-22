@@ -13,6 +13,7 @@ const NavigationBar = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/transaction">Transactions</Link></li>
             <li>Goals</li>
+            <li>Investments</li>
         </ul>
         
         <div className="icons">
