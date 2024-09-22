@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TransactionList.scss';
+import Edit from '../../assets/icons/edit.svg';
+import Delete from '../../assets/icons/delete.svg';
+// import Modal from '../Modal/Modal';
 
-const TransactionList  = ({ transactions }) => {
+const TransactionList  = ({ transactions, onEditTransaction, onDeleteTransaction }) => {
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [selectedTransaction, setSelectedTransaction] = useState(null);
 
     const formatAmount = (amount, type) => {
         const formattedAmount = parseFloat(amount).toFixed(2); // Ensures 2 decimal places
         return type === 'Inflow' ? `+ $${formattedAmount}` : `- $${formattedAmount}`;
     };
 
+    const handleDeleteClick = (transaction) => {
+        setSelectedTransaction(transaction);
+        setModalOpen(true); // Open the modal when delete is clicked
+    };
+
+    const handleEditClick = (transaction) => {
+        onEditTransaction(transaction); // Pass the transaction to parent to navigate to edit page
+    };
+
+    const handleConfirmDelete = () => {
+        onDeleteTransaction(selectedTransaction); // Call parent delete function
+        setModalOpen(false); // Close modal after deletion
+    };
+
     return (
         <section className="transactions">
-        
         <h3>Latest Transactions</h3>
-        
         <table>
             <thead>
             <tr>
@@ -20,6 +37,7 @@ const TransactionList  = ({ transactions }) => {
                 <th>Category</th>
                 <th>Date</th>
                 <th>Type</th>
+                <th>Actions</th> {/* New column for edit/delete icons */}
             </tr>
             </thead>
             
@@ -32,12 +50,33 @@ const TransactionList  = ({ transactions }) => {
                     <td>{transaction.category || 'N/A'}</td>
                     <td>{transaction.date}</td>
                     <td>{transaction.type}</td>
+                    <td>
+                        <img 
+                            src={Edit} 
+                            alt="Edit" 
+                            className="icon" 
+                            onClick={() => handleEditClick(transaction)} 
+                        />
+                        <img 
+                            src={Delete} 
+                            alt="Delete" 
+                            className="icon" 
+                            onClick={() => handleDeleteClick(transaction)} 
+                        />
+                    </td>
                     </tr>
                 ))}
             </tbody>
-
         </table>
 
+        {/* Modal for delete confirmation */}
+        {isModalOpen && (
+            <Modal 
+                title="Are you sure you want to delete this transaction?" 
+                onConfirm={handleConfirmDelete} 
+                onCancel={() => setModalOpen(false)} 
+            />
+        )}
         </section>
     );
 };
