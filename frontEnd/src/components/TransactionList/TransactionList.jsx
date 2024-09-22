@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import Modal from '../Modal/Modal.jsx'
 import './TransactionList.scss';
 import Edit from '../../assets/icons/edit.svg';
 import Delete from '../../assets/icons/delete.svg';
-// import Modal from '../Modal/Modal';
+
 
 const TransactionList  = ({ transactions, onEditTransaction, onDeleteTransaction }) => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -73,6 +74,7 @@ const TransactionList  = ({ transactions, onEditTransaction, onDeleteTransaction
         {isModalOpen && (
             <Modal 
                 title="Are you sure you want to delete this transaction?" 
+                message="This action cannot be undone!"
                 onConfirm={handleConfirmDelete} 
                 onCancel={() => setModalOpen(false)} 
             />
