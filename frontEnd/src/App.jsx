@@ -22,6 +22,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage transactions={transactions} />} />
           <Route path="/transaction" element={<TransactionPage addTransaction={addNewTransaction} />} />
+          <Route path="/edit-transaction" element={<TransactionPage updateTransaction={addNewTransaction} />} />
         </Routes>
       </div>
     </Router>

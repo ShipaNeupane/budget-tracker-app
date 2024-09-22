@@ -9,6 +9,16 @@ export const addTransaction = (transactionData) => {
     return API.post('/transactions', transactionData);
 };
 
+// Update a transaction by its ID
+export const updateTransaction = (id, transactionData) => {
+    return API.put(`/transactions/${id}`, transactionData);
+};
+
+// Delete a transaction
+export const deleteTransaction = (id) => {
+    return API.delete(`/transactions/${id}`);
+};
+
 // Get all transactions
 export const getTransactions = () => {
     return API.get('/transactions');

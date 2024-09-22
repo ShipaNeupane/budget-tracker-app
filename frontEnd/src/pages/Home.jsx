@@ -5,26 +5,28 @@ import Balance from '../components/Balance/Balance.jsx';
 import ActionSection from '../components/ActionSection/ActionSection.jsx';
 import TransactionList from '../components/TransactionList/TransactionList.jsx';
 import Footer from '../components/Footer/Footer.jsx';
-import { getTransactions } from '../api.js';
+import { getTransactions, deleteTransaction  } from '../api.js';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const [transactions, setTransactions] = useState([]);
     const [filteredTransactions, setFilteredTransactions] = useState([]);
     const [period, setPeriod] = useState('thisMonth');
+    const [transactionToEdit, setTransactionToEdit] = useState(null); // Store the transaction to be edited
+    const navigate = useNavigate(); // Use React Router's navigation
 
-      // Default transactions for last month
     const defaultLastMonthTransactions = [
-        { amount: 4000.00, category: 'Salary', date: '2024-08-01', type: 'Inflow' },
-        { amount: 4000.00, category: 'Salary', date: '2024-08-15', type: 'Inflow' },
-        { amount: 1500.00, category: 'Mortgage payment', date: '2024-08-05', type: 'Outflow' },
-        { amount: 100.00, category: 'Hydro bill', date: '2024-08-10', type: 'Outflow' },
-        { amount: 75.00, category: 'Phone bill', date: '2024-08-11', type: 'Outflow' },
-        { amount: 65.00, category: 'Internet bill', date: '2024-08-12', type: 'Outflow' },
-        { amount: 400.00, category: 'Groceries', date: '2024-08-20', type: 'Outflow' },
-        { amount: 150.00, category: 'Car expenses (fuel)', date: '2024-08-17', type: 'Outflow' },
-        { amount: 200.00, category: 'Car maintenance', date: '2024-08-25', type: 'Outflow' },
-        { amount: 100.00, category: 'Entertainment', date: '2024-08-22', type: 'Outflow' },
-        { amount: 500.00, category: 'Tax refund', date: '2024-08-27', type: 'Inflow' },
+        { id: 1, amount: 4000.00, category: 'Salary', date: '2024-08-01', type: 'Inflow' },
+        { id: 2, amount: 4000.00, category: 'Salary', date: '2024-08-15', type: 'Inflow' },
+        { id: 3, amount: 1500.00, category: 'Mortgage payment', date: '2024-08-05', type: 'Outflow' },
+        { id: 4, amount: 100.00, category: 'Hydro bill', date: '2024-08-10', type: 'Outflow' },
+        { id: 5, amount: 75.00, category: 'Phone bill', date: '2024-08-11', type: 'Outflow' },
+        { id: 6, amount: 65.00, category: 'Internet bill', date: '2024-08-12', type: 'Outflow' },
+        { id: 7, amount: 400.00, category: 'Groceries', date: '2024-08-20', type: 'Outflow' },
+        { id: 8, amount: 150.00, category: 'Car expenses (fuel)', date: '2024-08-17', type: 'Outflow' },
+        { id: 9, amount: 200.00, category: 'Car maintenance', date: '2024-08-25', type: 'Outflow' },
+        { id: 10, amount: 100.00, category: 'Entertainment', date: '2024-08-22', type: 'Outflow' },
+        { id: 11, amount: 500.00, category: 'Tax refund', date: '2024-08-27', type: 'Inflow' },
     ];
 
     // Fetch transactions from the API on component mount
@@ -82,9 +84,31 @@ const Home = () => {
     } else if (period === 'thisYear') {
         filtered = transactions.filter((transaction) => new Date(transaction.date) >= getStartOfYear());
     }
-
     setFilteredTransactions(filtered);
     };
+
+    const handleEditTransaction = (transaction) => {
+        setTransactionToEdit(transaction); // Store the selected transaction to edit
+        navigate('/edit-transaction', { state: { transactionToEdit: transaction } });
+    };
+    
+
+    const handleDeleteTransaction = (transactionId) => {
+        if (!transactionId) {
+            console.error('No transaction ID provided for deletion');
+            return;
+        }
+    
+        deleteTransaction(transactionId)
+            .then(() => {
+                const updatedTransactions = transactions.filter((t) => t.id !== transactionId);
+                setTransactions(updatedTransactions); // Update the state after deletion
+            })
+            .catch((error) => {
+                console.error('Error deleting transaction:', error);
+            });
+    };
+    
 
     return (
     <div>
@@ -92,7 +116,11 @@ const Home = () => {
         <Header period={period} setPeriod={setPeriod} />
         <Balance transactions={filteredTransactions} />
         <ActionSection />
-        <TransactionList transactions={filteredTransactions} />
+        <TransactionList 
+            transactions={filteredTransactions} 
+            onEditTransaction={handleEditTransaction} 
+            onDeleteTransaction={handleDeleteTransaction}
+        />
         <Footer />
     </div>
     );
