@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import './NavBar.scss';
 import logo from "../../assets/logo.png"
 import profile from "../../assets/profilePic.jpg"
-import bell from '../../assets/icons/bell.png'
-import setting from '../../assets/icons/setting.png'
 
 const NavigationBar = () => {
     return (
