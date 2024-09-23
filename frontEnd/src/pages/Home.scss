@@ -1,0 +1,19 @@
+@use "../styles/global.scss" as *;
+
+.home {
+    @include tablet{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        margin: 2rem 0;
+    }
+
+    .chart-container {
+        flex: 1;
+        margin-right: 0.2rem;            
+    }
+
+    .transactions {
+        flex: 1;
+    }
+}

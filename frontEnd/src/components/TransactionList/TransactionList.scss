@@ -1,0 +1,54 @@
+@use "../../styles/global.scss" as *;
+
+.transactions {
+    margin: 2.5rem 0.2rem;
+    width: auto;
+
+    @include tablet{
+        margin: 0.7rem 0 0.7rem 0;
+        width: 100%;
+    }
+
+    h3 {
+    font-size: $font-size-medium;
+    margin: 0.3rem 0;
+    text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        align-items: center;
+
+        th, td {
+            padding: 0.5rem;
+            text-align: center;
+            border-bottom: 1px solid $light-background;
+        }
+
+        th {
+            font-size: $font-size-small;
+            color: $gray-text;
+        }
+
+        td {
+            font-size: $font-size-small;
+        }
+
+        .inflow {
+            color: $positive-color; 
+        }
+
+        .outflow {
+            color: $negative-color; 
+        }
+        
+        .inflow:last-child {
+            color: $positive-color; 
+        }
+
+        .outflow:last-child {
+            color: $negative-color; 
+        }
+    }
+}

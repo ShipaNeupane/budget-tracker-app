@@ -1,0 +1,33 @@
+@use "../../styles/global.scss" as *;
+
+.actions{
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+    gap: 3rem;
+
+    .action-button {
+        padding: 1rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-family: 'Consolas';
+        cursor: pointer;
+
+        &.add-income {
+            font-size: medium;
+            background-color: $positive-color;
+            color: white;
+        }
+
+        &.add-expense {
+            font-size: medium;
+            background-color: $negative-color;
+            color: white;
+        }
+
+        &:hover {
+            opacity: 0.8;
+            font-weight: bold;
+        }
+    }
+    }

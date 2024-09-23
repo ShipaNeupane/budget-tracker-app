@@ -1,0 +1,67 @@
+@use "../../styles/global.scss" as *;
+
+.transaction-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1.25rem;
+    align-items: center;
+
+    h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    }
+
+    .back-arrow {
+        width: 2rem;
+        height: 2rem;
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        margin-bottom: 1.25rem;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+
+        label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            border: 1px solid $gray-text;
+            margin: 0.3rem;
+            font-family: 'Consolas';
+        }
+    }
+
+    .submit-button {
+        font-family: 'Consolas';
+        margin: 1.25rem auto; 
+        display: block; 
+        align-self: center;
+        padding: 1rem;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            font-weight: bold;
+            background-color: darken($primary-color, 5%);
+        }
+    }
+}

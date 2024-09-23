@@ -1,0 +1,87 @@
+@use "../../styles/global.scss" as *;
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-container {
+    background-color: white;
+    width: 35rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+
+    h3 {
+        font-size: $font-size-large;
+        font-family: $font-family;
+        font-weight: $font-bold;
+        color: $dark-text;
+    }
+}
+
+.modal-body {
+    margin-bottom: 1rem;
+
+    p {
+        font-style: italic;
+        font-size: $font-size-regular;
+        font-family: $font-family;
+        color: $gray-text;
+    }
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    .btn-cancel,
+    .btn-confirm {
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 0.35rem;
+        cursor: pointer;
+        font-size: $font-size-regular;
+        font-family: $font-family;
+        font-weight: $font-medium;
+    }
+
+    .btn-cancel {
+        background-color: #f1f1f1;;
+        color: $gray-text;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $negative-color;
+            color: white;
+        }
+    }
+
+    .btn-confirm {
+        background-color: green;
+        color: white;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $positive-color; 
+        }
+    }
+}

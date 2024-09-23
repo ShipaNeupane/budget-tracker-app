@@ -1,0 +1,40 @@
+@use "../../styles/global.scss" as *;
+
+.balance {
+    margin: 2rem 1.25rem;
+
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .data-item {
+        text-align: center;
+        background-color: white;
+        border-radius: 0.5rem;
+        padding:1.25rem;
+        flex: 1;
+        margin: 0.5rem 0.625rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        p {
+        font-size: $font-size-small;
+        color: $gray-text;
+        }
+
+        h2 {
+        font-size: $font-size-large;
+        font-weight: $font-bold;
+        }
+
+        &__positive {
+            font-size: $font-size-small;
+            color: $positive-color;
+        }
+
+        &__negative{
+            font-size: $font-size-small;
+            color: $negative-color;
+        }
+    }
+}
