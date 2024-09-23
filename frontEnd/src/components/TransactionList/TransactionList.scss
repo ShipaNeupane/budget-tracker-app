@@ -1,12 +1,17 @@
 @use "../../styles/global.scss" as *;
 
 .transactions {
-    margin: 1rem;
-    width: 100%;
+    margin: 2.5rem 0.2rem;
+    width: auto;
+
+    @include tablet{
+        margin: 0.7rem 0 0.7rem 0;
+        width: 100%;
+    }
 
     h3 {
     font-size: $font-size-medium;
-    margin-bottom: 1rem;
+    margin: 0.3rem 0;
     text-align: center;
     }
 

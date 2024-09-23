@@ -1,10 +1,13 @@
 @use "../../styles/global.scss" as *;
 
 .footer {
-    margin: 3rem;
-    padding: 5rem 0;
-    text-align: center;
+        padding: 0.5rem;
+        text-align: center;
 
+    @include tablet{
+        padding: 5rem 0.5rem;
+        text-align: center;
+    }
     &__text {
         color: $gray-text;
     }

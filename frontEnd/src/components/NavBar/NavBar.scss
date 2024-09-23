@@ -4,8 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem;
-    padding: 0.5rem;
+    padding: 1.5rem;
     background-color: $light-background;
 
     .logo {
@@ -14,21 +13,25 @@
     }
 
     .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 1rem;
+        display: none;
 
-    li {
-        margin: 0 15px;
-        font-size: $font-size-small;
-        font-weight: $font-bold;
-        color: $dark-text;
-        cursor: pointer;
-
-        &:hover {
-        color: $primary-color;
+        @include tablet {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
         }
-    }
+
+        li {
+            margin: 0 15px;
+            font-size: $font-size-small;
+            font-weight: $font-bold;
+            color: $dark-text;
+            cursor: pointer;
+
+            &:hover {
+            color: $primary-color;
+            }
+        }
     }
     
     .profile-pic {
@@ -36,6 +39,58 @@
         height: 2.5rem;
         object-fit: cover;
         border-radius: 50%;
+        cursor: pointer;
+
+        @include tablet {
+            cursor:unset;
+        }
     }
-    
+
+.mobile-menu {
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 4.5rem;
+    right: 1rem;
+    background-color: $light-background;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 1rem;
+    z-index: 1000;
+
+    li {
+        padding: 10px;
+        font-size: $font-size-small;
+        font-weight: $font-bold;
+        color: $dark-text;
+        cursor: pointer;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    &.open {
+        display: block;
+    }
+}
+
+// Media query for tablet and desktop (min-width 768px)
+@media (min-width: 768px) {
+    .navigation-bar {
+        .nav-links {
+            display: flex; /* Visible by default on larger screens */
+        }
+
+        .profile-pic {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    // Ensure mobile menu is hidden on larger screens
+    .mobile-menu {
+        display: none !important;
+    }
+}
 }

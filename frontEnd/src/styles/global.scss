@@ -21,6 +21,10 @@
 
     a{
         text-decoration: none;
+        color: $dark-text;
+        &:hover {
+            color: $primary-color;
+        }
     }
 
     // Button Styling (for Add Income, Add Expense, Transfer Money)
